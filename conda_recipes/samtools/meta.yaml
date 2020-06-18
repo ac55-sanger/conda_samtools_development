@@ -1,0 +1,41 @@
+# Here version number is set arbitrarily and doesn't map with samtools release version
+{% set version = "1.19" %}
+
+package:
+  name: samtools
+  version: {{ version }}
+
+build:
+  number: 0
+
+# Here source is development branch
+source:
+  url: https://github.com/samtools/samtools/archive/develop.zip
+
+# Again htslib version number is set arbitrarily and doesn't map with htslib release version
+requirements:
+  build:
+    - {{ compiler('c') }}
+  host:
+    - htslib=1.19
+    - ncurses
+    - zlib
+  run:
+    - htslib=1.19
+    - ncurses
+    - zlib
+
+about:
+  home: https://github.com/samtools/samtools
+  license: MIT
+  license_file: LICENSE
+  summary: Tools for dealing with SAM, BAM and CRAM files
+
+test:
+  commands:
+    - samtools --help
+    - samtools view 'https://test1.com' 2>&1 | grep 'fail to read the header' -q
+
+extra:
+  identifiers:
+    - biotools:samtools
