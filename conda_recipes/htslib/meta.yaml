@@ -1,0 +1,47 @@
+# Here version number is set arbitrarily and doesn't map with htslib release version
+{% set version = "1.19" %}
+
+package:
+  name: htslib
+  version: {{ version }}
+
+build:
+  number: 0
+
+# Here source is development branch
+source:
+  url: https://github.com/samtools/htslib/archive/develop.zip
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+  host:
+    - libcurl
+    - bzip2
+    - xz
+    - zlib
+    - openssl  # [not osx]
+  run:
+    - libcurl
+    - bzip2
+    - xz
+    - zlib
+    - openssl  # [not osx]
+
+test:
+  files:
+    - test1.bed
+  commands: 
+    - "test -e test1.bed || printf 'chr1\\t100\\t200\\n' > test1.bed"
+    - bgzip test1.bed
+    - tabix test1.bed.gz
+    - htsfile test1.bed.gz
+
+about:
+  home: https://github.com/samtools/htslib
+  license: MIT
+  summary: C library for high-throughput sequencing data formats.
+
+extra:
+  identifiers:
+    - biotools:HTSlib
