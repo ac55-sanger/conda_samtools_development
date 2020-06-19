@@ -27,7 +27,7 @@ $ source ~/miniconda2/bin/activate
 
 ## 2. Build conda packages from conda recipes
 
-> Use this section only if you wish to build conda packages from conda recipes, else jump to step 6. These recipes are taken from bioconda repo [1](https://github.com/bioconda/bioconda-recipes/tree/master/recipes/samtools) [2](https://github.com/bioconda/bioconda-recipes/tree/master/recipes/htslib)
+> Use this section only if you wish to build conda packages from conda recipes, else jump to [step](https://github.com/ac55-sanger/conda_samtools_development#install-in-a-different-conda-environment). These recipes are taken from bioconda repo [1](https://github.com/bioconda/bioconda-recipes/tree/master/recipes/samtools) [2](https://github.com/bioconda/bioconda-recipes/tree/master/recipes/htslib)
 
 Let's build the packages step by step (make sure to have sourced the base conda environment):
 
@@ -136,9 +136,3 @@ samtools 1.10
 Using htslib 1.10.2
 Copyright (C) 2019 Genome Research Ltd.
 ```
-
-
-
-
-
-
