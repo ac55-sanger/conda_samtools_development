@@ -40,6 +40,8 @@ Let's build the packages step by step (make sure to have sourced the base conda 
 ```
 (base) $ git clone https://github.com/ac55-sanger/conda_samtools_development.git
 
+# Install required packages from apt
+(base) $ sudo apt-get install autoconf automake build-essential make gcc perl zlib1g-dev libbz2-dev liblzma-dev libcurl4-gnutls-dev libssl-dev libncurses5-dev 
 ```
 
 **Build htslib package:**
