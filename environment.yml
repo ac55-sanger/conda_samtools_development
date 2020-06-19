@@ -1,0 +1,10 @@
+name: my_env_from_file
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+  - home/ubuntu/miniconda2/conda-bld
+dependencies:
+  - python=3
+  - htslib=1.19
+  - samtools=1.19
